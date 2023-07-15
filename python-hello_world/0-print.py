@@ -1,2 +1,4 @@
-word = '"Programming is like building a multilingual puzzle'
-print(word)
+word = '"Programming is like building a multilingual puzzle \n'
+
+print(word )
+print()

@@ -1,4 +1,4 @@
-word = "Hello"
+word = "holberton"
 
 word_first_3 = word[:3];
 print(word_first_3)

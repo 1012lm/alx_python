@@ -1,4 +1,4 @@
-word = "Holberton"
+word = input("enter the word : ")
 
 first  = word[:3]
 print("First 3 letters: " , first)

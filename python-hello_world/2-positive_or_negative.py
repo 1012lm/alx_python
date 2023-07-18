@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 import random
 
-num = random.randint(-1000, 1000)
+number = random.randint(-1000, 1000)
 
-if num > 0:
-    print("{} is positive".format(num))
-elif num == 0:
-    print("{} is zero".format(num))
+if number > 0:
+    print("{} is positive".format(number))
+elif number == 0:
+    print("{} is zero".format(number))
 else:
-    print("{} is negative".format(num))
+    print("{} is negative".format(number))

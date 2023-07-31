@@ -1,6 +1,10 @@
 class Square:
     """
-    A class that defines a square by its size.
+    This is a class that defines a square by its size.
+
+    Attributes:
+        __size (int): The size of the square.
+
     """
 
     def __init__(self, size):
@@ -8,6 +12,7 @@ class Square:
         Initializes a new instance of the Square class with a size parameter.
 
         Args:
-            size: The size of the square.
+            size (int): The size of the square.
+
         """
         self.__size = size

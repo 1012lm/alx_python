@@ -1,6 +1,14 @@
+"""
+This module defines a class called Square, which represents a square by its size and provides methods to get and set the size of the square, to compute its area, and to print the square using the character #.
+"""
+
 class Square:
     """
     A class that defines a square by its size.
+
+    Attributes:
+        size (int): The size of the square.
+
     """
 
     def __init__(self, size=0):
@@ -19,6 +27,9 @@ class Square:
     def size(self):
         """
         Returns the current size of the square.
+
+        Returns:
+            int: The size of the square.
         """
         return self.__size
 
@@ -43,6 +54,9 @@ class Square:
     def area(self):
         """
         Computes and returns the area of the square.
+
+        Returns:
+            int: The area of the square.
         """
         return self.__size ** 2
 

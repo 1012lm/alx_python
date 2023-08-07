@@ -20,4 +20,4 @@ class BaseGeometry:
         Raises:
             Exception: Indicates that the method is not implemented.
         """
-        raise Exception("area() is not implemented")
+        raise NotImplementedError("area() is not implemented")

@@ -7,10 +7,10 @@ class BaseGeometry:
     A base class for geometrical operations.
     """
     def __str__(self):
-        return "[BaseGeometry]"
+        return "<3-base_geometry.BaseGeometry object at "
 
     def __repr__(self):
-        return "[BaseGeometry]"
+        return "<3-base_geometry.BaseGeometry object at "
 
     def __dir__(self):
         return [

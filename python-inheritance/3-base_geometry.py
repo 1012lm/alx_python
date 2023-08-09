@@ -3,8 +3,8 @@
     """
 
 class BaseGeometry:
-    pass
     """
     A base class for geometrical operations.
     """
+    pass
     

@@ -6,5 +6,5 @@ class BaseGeometry:
     """
     A base class for geometrical operations.
     """
-
-    pass
+    def __init__(self):
+        pass

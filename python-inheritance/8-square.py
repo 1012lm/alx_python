@@ -10,7 +10,7 @@ class BaseGeometry:
     A base class for geometrical operations.
 
     Methods:
-        integer_validator(self, name, value): Validates if a value is an integer.
+        integer_validator(self, name, value): Validates if a v
     """
 
     def integer_validator(self, name, value):
@@ -74,8 +74,7 @@ class Rectangle(BaseGeometry):
 
 class Square(Rectangle):
     """
-    A class representing a square, which is a 
-
+    A class representing a square, which is a
     Inherits from:
         Rectangle
 
@@ -101,4 +100,3 @@ class Square(Rectangle):
             str: The string representation of the square in the format "".
         """
         return f"[Square] {self.__size}/{self.__size}"
-    

@@ -2,6 +2,7 @@
     nvfilawufujvcjvh;awd
     dfnco;sc
 """
+
 from models.base import Base
 
 class Rectangle(Base):
@@ -9,9 +10,6 @@ class Rectangle(Base):
     nbd gb ;wirobgf kjhgvd
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        ndovhb hvo jsgdcoc 
-        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -21,15 +19,15 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -39,15 +37,15 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -57,15 +55,15 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         return self.__x
 
     @x.setter
     def x(self, value):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -75,15 +73,15 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -92,6 +90,13 @@ class Rectangle(Base):
 
     def area(self):
         """
-        ndovhb hvo jsgdcoc 
-        """
+    nbd gb ;wirobgf kjhgvd
+    """
         return self.__width * self.__height
+
+    def display(self):
+        """
+    nbd gb ;wirobgf kjhgvd
+    """
+        for _ in range(self.__height):
+            print("#" * self.__width)

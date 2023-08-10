@@ -4,7 +4,6 @@
        and what each method does. The parameters, return types, and ra.
 """
 
-#!/usr/bin/python3
 """
 Module 8-square
 Defines the Square class

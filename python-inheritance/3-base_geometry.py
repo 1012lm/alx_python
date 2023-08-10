@@ -24,7 +24,6 @@ class BaseGeometry:
             '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
             '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__'
         ]
-BaseGeometry = dir(base)  # Get the list of attributes
-BaseGeometry.remove('__init_subclass__')
+
 
     

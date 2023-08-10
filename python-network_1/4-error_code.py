@@ -5,9 +5,9 @@
     Args:
         url (str): The URL to send the request to.
     """
-
 import requests
 import sys
+
 
 def display_response(url):
     """
@@ -22,6 +22,7 @@ def display_response(url):
         print(f"Error code: {response.status_code}")
     else:
         print(response.text)
+
 
 # Get the URL from the command-line argument
 url = sys.argv[1]

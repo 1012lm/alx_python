@@ -81,7 +81,7 @@ class Square(Rectangle):
     Attributes:
         __size (int): The size of the square (width and h.
     """
-    def __str__(Square):
+    def __str__(self):
         """
         Return a string representation of the rectangle.
 

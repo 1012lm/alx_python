@@ -5,7 +5,6 @@
     Args:
         url (str): The URL to send the request to.
     """
-
 import requests
 import sys
 
@@ -17,15 +16,18 @@ def search_user(letter):
 
     Args:
         url (str): The URL to send the request to.
-     """
+    """
     url = 'http://0.0.0.0:5000/search_user'
     params = {'q': letter}
     response = requests.post(url, params=params)
 
     try:
         data = response.json()
-        if data:
-            print(f"[{data['id']}] {data['name']}")
+        if isinstance(data, dict):
+            if 'id' in data and 'name' in data:
+                print(f"[{data['id']}] {data['name']}")
+            else:
+                print("No result")
         else:
             print("No result")
     except ValueError:

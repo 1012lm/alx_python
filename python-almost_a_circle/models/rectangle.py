@@ -2,16 +2,15 @@
     nvfilawufujvcjvh;awd
     dfnco;sc
 """
-
 from models.base import Base
 
 class Rectangle(Base):
     """
-        mblauifcsn lghpfcv n 9pwc 
+    nbd gb ;wirobgf kjhgvd
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         super().__init__(id)
         self.width = width
@@ -22,14 +21,14 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -40,14 +39,14 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -58,14 +57,14 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         return self.__x
 
     @x.setter
     def x(self, value):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -76,17 +75,23 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-        bcjspv jxc lsuv 
+        ndovhb hvo jsgdcoc 
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """
+        ndovhb hvo jsgdcoc 
+        """
+        return self.__width * self.__height

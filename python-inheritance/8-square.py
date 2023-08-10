@@ -1,15 +1,16 @@
 """
-    The documentation includes descriptions of the classes, their attributes, and methods.
-      It provides information on what each class represents, what each attribute means,
-       and what each method does. The parameters, return types, and raised exceptions are also documented for the methods.
+    The documentation includes descriptions of the classes, their attribut.
+      It provides information on what each class represents, what each a,
+       and what each method does. The parameters, return types, and ra.
 """
+
 
 class BaseGeometry:
     """
     A base class for geometrical operations.
 
     Methods:
-        integer_validator(self, name, value): Validates if a value is an integer greater than zero.
+        integer_validator(self, name, value): Validates if a value is an integer.
     """
 
     def integer_validator(self, name, value):
@@ -57,7 +58,7 @@ class Rectangle(BaseGeometry):
         Return a string representation of the rectangle.
 
         Returns:
-            str: The string representation of the rectangle in the format "[Rectangle] width/height".
+            str: The string representation of the rectangle in the ".
         """
         return f"[Rectangle] {self.__width}/{self.__height}"
 
@@ -73,13 +74,13 @@ class Rectangle(BaseGeometry):
 
 class Square(Rectangle):
     """
-    A class representing a square, which is a special type of rectangle.
+    A class representing a square, which is a 
 
     Inherits from:
         Rectangle
 
     Attributes:
-        __size (int): The size of the square (width and height are equal).
+        __size (int): The size of the square (width and h.
     """
 
     def __init__(self, size):
@@ -97,6 +98,7 @@ class Square(Rectangle):
         Return a string representation of the square.
 
         Returns:
-            str: The string representation of the square in the format "[Square] size/size".
+            str: The string representation of the square in the format "".
         """
         return f"[Square] {self.__size}/{self.__size}"
+    

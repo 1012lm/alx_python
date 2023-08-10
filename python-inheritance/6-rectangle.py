@@ -1,56 +1,24 @@
 """
     The code snippet provided defines two classes: BaseGeometry and Rectangle.
 """
+#!/usr/bin/python3
+"""
+Module 6-rectangle
+Defines the Rectangle class
+"""
 
-class BaseGeometry:
-    """
-    A base class for geometrical operations.
-
-    Methods:
-        area(self): Raises an exception indicating that the method is not implemented.
-        integer_validator(self, name, value): Validates if a value is an integer greater than zero.
-    """
-    
-    def area(self):
-        """
-        Calculate the area of the geometry.
-
-        Raises:
-            Exception: Indicates that the method is not implemented.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        Validate if a value is an integer greater than zero.
-
-        Parameters:
-            name (str): The name of the value being validated.
-            value (int): The value to be validated.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than or equal to zero.
-        """
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
     """
-    A class representing a rectangle.
-
-    Attributes:
-        __width (int): The width of the rectangle.
-        __height (int): The height of the rectangle.
+    Represents a rectangle, inherits from BaseGeometry.
     """
+
     def __init__(self, width, height):
         """
-        Initialize a rectangle with the given width and height.
-
-        Parameters:
+        Initializes a Rectangle instance.
+        Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
         """
@@ -61,24 +29,14 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """
-        Return a string representation of the rectangle.
-
-        Returns:
-            str: The string representation of the rectangle in the format "[Rectangle] width/height".
+        Returns a string representation of the Rectangle instance.
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
-    def __dir__(self):
+    def area(self):
         """
-        Return a list of attributes and methods of the Rectangle class.
-
+        Calculates the area of the Rectangle instance.
         Returns:
-            list: A list of attributes and methods.
+            The area of the rectangle.
         """
-        return [
-            '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', 
-            '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', 
-            '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
-            '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__',
-            'area', 'integer_validator'
-        ]
+        return self.__width * self.__height

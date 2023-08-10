@@ -28,5 +28,8 @@ def display_response_body(url):
 # Get the URL from the command-line argument
 url = sys.argv[1]
 
+# Replace 0.0.0.0 with localhost
+url = url.replace('0.0.0.0', 'localhost')
+
 # Send a GET request to the URL and display the response body
 display_response_body(url)

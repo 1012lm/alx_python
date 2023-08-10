@@ -1,7 +1,8 @@
 """
     The code snippet provided defines two classes: BaseGeometry and Rectangle.
 """
-class Rectangle(BaseGeometry (5-base_geometry.py)):
+BaseGeometry = __import__('5-base_geometry.py').BaseGeometry
+class Rectangle(BaseGeometry ):
     """
     A class representing a rectangle.
 

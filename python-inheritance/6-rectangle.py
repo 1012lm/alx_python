@@ -10,13 +10,7 @@ class BaseGeometry:
         area(self): Raises an exception indicating that the method is not implemented.
         integer_validator(self, name, value): Validates if a value is an integer greater than zero.
     """
-    def __dir__(Rectangle):
-        return [
-          '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__',
-            '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
-              '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
-                '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator'
-        ]
+    
     def area(self):
         """
         Calculate the area of the geometry.
@@ -52,7 +46,13 @@ class Rectangle(BaseGeometry):
         __width (int): The width of the rectangle.
         __height (int): The height of the rectangle.
     """
-
+    def __dir__(Rectangle):
+        return [
+          '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__',
+            '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
+              '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator'
+        ]
     def __init__(self, width, height):
         """
         Initialize a rectangle with the given width and height.

@@ -2,7 +2,7 @@
 """
 Script that takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa
-where name matches the argument.
+where name matches the argument (case-sensitive).
 """
 
 import sys
@@ -27,8 +27,8 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL queries
     cur = db.cursor()
 
-    # Execute the query to fetch states state name, sorted by id
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    # Execute the query to fetch states matching sorted by id
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
     cur.execute(query, (state_name,))
 
     # Fetch all rows from the result set

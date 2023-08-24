@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL queries
     cur = db.cursor()
 
-    # Execute the query to fetch states starting with 'N' (case-insensitive), sorted by id
+    # Execute the query to fetch starting with 'N' sorted by id
     cur.execute(
         "SELECT * FROM states WHERE name LIKE 'N%' "
         "COLLATE utf8mb4_general_ci ORDER BY id ASC"

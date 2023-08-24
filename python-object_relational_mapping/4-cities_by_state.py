@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL queries
     cur = db.cursor()
 
-    # Execute the query to fetch all cities  sorted by cities.id
+    # Execute the query to fetch all cities joined sorted by cities.id
     query = """
     SELECT cities.id, cities.name, states.name
     FROM cities
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     # Fetch all rows from the result set
     rows = cur.fetchall()
 
-    # Print the cities with their corresponding desired format
+    # Print the cities with their corresponding state names in the desired
     for row in rows:
         print(row)
 

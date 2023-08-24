@@ -25,32 +25,22 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL queries
     cur = db.cursor()
 
-    # Check if the state exists in the database
-    query = "SELECT id FROM states WHERE name = %s"
+    # Execute the query to fetch cities of the given state sorted by cities.id
+    query = """
+    SELECT GROUP_CONCAT(cities.name SEPARATOR ', ')
+    FROM cities
+    JOIN states ON cities.state_id = states.id
+    WHERE states.name = %s
+    ORDER BY cities.id ASC
+    """
     cur.execute(query, (state_name,))
-    state_id = cur.fetchone()
 
-    if state_id:
-        # Execute the query to fetch cities of the given state cities.id
-        query = """
-        SELECT GROUP_CONCAT(cities.name SEPARATOR ', ')
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC
-        """
-        cur.execute(query, (state_name,))
+    # Fetch the result
+    result = cur.fetchone()[0]
 
-        # Fetch the result
-        result = cur.fetchone()[0]
-
-        # Print the cities of the given state
-        if result:
-            print(result)
-        else:
-            print("No cities found for the given state.")
-    else:
-        print("State not found in the database.")
+    # Print the cities of the given state
+    if result:
+        print(result)
 
     # Close the cursor and database connection
     cur.close()

@@ -1,6 +1,6 @@
 """
-Script that lists all states with a name starting
-with N (case-insensitive) from the database hbtn_0e_0_usa.
+Script that lists all states with a name starting with
+N (case-insensitive) from the database hbtn_0e_0_usa.
 """
 
 import sys

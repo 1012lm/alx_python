@@ -7,7 +7,7 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
-    # Get MySQL credentials, database name, and state name from command-line
+    # Get MySQL credentials, database name, and state from command-line
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]

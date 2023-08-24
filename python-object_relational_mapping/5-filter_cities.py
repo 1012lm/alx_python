@@ -7,7 +7,7 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
-    # Get MySQL credentials, database name, and state from command-line
+    # Get MySQL credentials, database name, and state name from command-line
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -41,6 +41,8 @@ if __name__ == '__main__':
     # Print the cities of the given state
     if result:
         print(result)
+    else:
+        print("No cities found for the given state.")
 
     # Close the cursor and database connection
     cur.close()

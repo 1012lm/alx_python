@@ -1,5 +1,5 @@
 """
-This is a Flask web application that displays different messages when accessed.
+This is a Flask web application that implements various routes and displays different messages when accessed.
 """
 
 from flask import Flask, render_template
@@ -54,16 +54,19 @@ def python_text(text):
     return 'Python {}'.format(text)
 
 
-@app.route('/number/<int:n>', strict_slashes=False)
+@app.route('/number/<float:n>', strict_slashes=False)
 def number(n):
     """
     Route handler for the '/number/<n>' URL.
     Args:
-        n (int): The number extracted from the URL.
+        n (float): The number extracted from the URL.
     Returns:
-        str: The message "<n> is a number" if n is an integer.
+        str: The message "<n> is a number" if n is an integer, otherwise returns a 404 error.
     """
-    return '{} is a number'.format(n)
+    if n.is_integer():
+        return '{} is a number'.format(int(n))
+    else:
+        return '404 Not Found', 404
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)

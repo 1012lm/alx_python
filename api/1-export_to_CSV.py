@@ -1,42 +1,29 @@
 import csv
 import sys
+import os
 
 
-def export_tasks_to_csv(user_id, tasks):
-    filename = f"{user_id}.csv"
-    fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+def user_info(id):
+    filename = str(id) + ".csv"
+    if not os.path.exists(filename):
+        print(f"CSV file '{filename}' does not exist.")
+        return
 
-    with open(filename, mode="w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writeheader()
+    with open(filename, 'r') as f:
+        reader = csv.reader(f)
+        tasks = list(reader)
 
-        for task in tasks:
-            writer.writerow({
-                "USER_ID": user_id,
-                "USERNAME": task["username"],
-                "TASK_COMPLETED_STATUS": str(task["completed"]),
-                "TASK_TITLE": task["title"]
-            })
+    num_tasks = len(tasks) - 1  # Subtracting 1 to exclude the header row
+    print(f"Number of tasks in CSV: {num_tasks}")
 
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python3 export_to_csv.py <user_id>")
+        print("Usage: python3 main.py <user_id>")
         return
 
-    user_id = sys.argv[1]
-
-    # Assuming tasks is a list of dictionaries containing task data
-    tasks = [
-        {"username": "Antonette", "completed": False,
-            "title": "suscipit repellat esse quibusdam voluptatem incidunt"},
-        {"username": "Antonette", "completed": True,
-            "title": "distinctio vitae autem nihil ut molestias quo"},
-        # ... more tasks ...
-    ]
-
-    export_tasks_to_csv(user_id, tasks)
-    print(f"Data exported to {user_id}.csv")
+    user_id = int(sys.argv[1])
+    user_info(user_id)
 
 
 if __name__ == "__main__":

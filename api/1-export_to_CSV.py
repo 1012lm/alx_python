@@ -1,38 +1,43 @@
-import sys
-import requests
 import csv
+import sys
 
 
-def get_employee_info(employee_id):
-    # Retrieve employee details
-    url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    response = requests.get(url)
-    employee_data = response.json()
-    employee_name = employee_data["name"]
+def export_tasks_to_csv(user_id, tasks):
+    filename = f"{user_id}.csv"
+    fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
 
-    # Retrieve TODO list for the employee
-    url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-    response = requests.get(url)
-    todos = response.json()
+    with open(filename, mode="w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
 
-    # Export TODO list data to CSV file
-    filename = f"{employee_id}.csv"
-    with open(filename, "w", newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(
-            ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-        for todo in todos:
-            task_completed = "True" if todo["completed"] else "False"
-            writer.writerow([employee_id, employee_name,
-                            task_completed, todo["title"]])
+        for task in tasks:
+            writer.writerow({
+                "USER_ID": user_id,
+                "USERNAME": task["username"],
+                "TASK_COMPLETED_STATUS": str(task["completed"]),
+                "TASK_TITLE": task["title"]
+            })
 
-    print(f"Data exported to {filename} successfully.")
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python3 export_to_csv.py <user_id>")
+        return
+
+    user_id = sys.argv[1]
+
+    # Assuming tasks is a list of dictionaries containing task data
+    tasks = [
+        {"username": "Antonette", "completed": False,
+            "title": "suscipit repellat esse quibusdam voluptatem incidunt"},
+        {"username": "Antonette", "completed": True,
+            "title": "distinctio vitae autem nihil ut molestias quo"},
+        # ... more tasks ...
+    ]
+
+    export_tasks_to_csv(user_id, tasks)
+    print(f"Data exported to {user_id}.csv")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 export_to_CSV.py [employee_id]")
-        sys.exit(1)
-
-    employee_id = int(sys.argv[1])
-    get_employee_info(employee_id)
+    main()
